@@ -1,11 +1,19 @@
+int startX = 0;
+int startY = 0;
+int endX = 0;
+int endY = 0;
+
 void setup()
 {
   size(300,300);
+  background(51, 150, 214);
 }
 void draw()
 {
 color c2=color(235,134,20);
 fill(c2);
+color c3 = color(255, 204, 0);
+stroke(c3);
 ellipse(180, 180, 50, 50);
 line(170, 300, 180, 255);
 line(190, 300, 180, 255);
@@ -15,35 +23,19 @@ line(180, 230, 170, 200);
 ellipse(170, 180, 10, 10);
 ellipse(190, 180, 10, 10);
 ellipse(180, 200, 15, 20);
-color c1=color(0,0,0);
-fill(c1);
-
-}
+fill(c3);
+}   
 void mousePressed()
 {
-  color c3=color(255, 204, 0);
-stroke(c3);
-line(0,0, 8, 15);
-line(8, 15, 16, 17);
-line(16, 17, 22, 27);
-line(22, 29, 28, 32);
-line(28, 32, 34, 34);
-line(34, 34, 40, 40);
-line(40, 40, 42, 44);
-line(42, 44, 54, 55);
-line(54, 55, 58, 55);
-line(58, 55, 63, 58);
-line(63, 58, 72, 58);
-line(72, 58, 76, 72);
-line(76, 72, 80, 72);
-line(80, 72, 80, 76);
-line(80, 76, 86, 76);
-line(86, 76, 97, 100);
-line(97, 100, 115, 100);
-line(115, 100, 100, 112);
-line(100, 112, 115, 112);
-line(115, 112, 122, 136);
-line(122, 136, 130, 130);
-line(130, 130, 150, 156);
-line(150, 156, 160, 160);
+startX = 0;
+startY = 0;
+endX = 0;
+endY = 0;
+while(endX < 160){
+   endX = startX + (int)(Math.random()*15) ;
+   endY = startY + (int)(Math.random()*25)-5 ;
+   line(startX, startY, endX, endY);
+   startX = endX;
+   startY = endY;
+ }
 }
